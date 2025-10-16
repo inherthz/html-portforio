@@ -2,137 +2,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatipollZ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>PatipollZ</title>
+
+  <!-- Mobile-first styles -->
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --card:#111827;         /* gray-900 */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e5e7eb;         /* gray-200 */
+      --accent:#38bdf8;       /* sky-400 */
+      --border:#1f2937;       /* gray-800 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .container{max-width:860px;margin:0 auto;padding:16px 16px 96px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .title{font-size:1.6rem;margin:0;display:flex;align-items:center;gap:10px}
+    .social{
+      display:flex;align-items:center;gap:10px
+    }
+    .social a{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:12px;background:var(--card);
+      border:1px solid var(--border)
+    }
+    .social a:active{transform:scale(0.98)}
+    .profile{
+      display:flex;align-items:center;gap:16px;margin-top:16px
+    }
+    .avatar{
+      width:104px;height:104px;border-radius:18px;object-fit:cover;border:1px solid var(--border)
+    }
+    .subtitle{margin:0;color:var(--muted);font-size:0.95rem}
+    hr{border:none;border-top:1px solid var(--border);margin:20px 0}
+
+    /* Cards / sections */
+    .section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin:16px 0}
+    .section h3{margin:0 0 10px 0;font-size:1.05rem}
+    .list{margin:0;padding-left:20px}
+    .muted{color:var(--muted)}
+    .badge{
+      display:inline-block;padding:2px 8px;border-radius:999px;background:#0b3b53;color:#9ee6ff;font-size:12px;border:1px solid #0e4e6e
+    }
+
+    /* Awards sub-list bullets inside a section */
+    .awards-sub{margin-top:8px;padding-left:22px}
+
+    /* Footer sticks on mobile nicely */
+    footer{position:fixed;left:0;right:0;bottom:0;background:rgba(17,24,39,0.9);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+    .footer-inner{max-width:860px;margin:0 auto;padding:10px 16px;font-size:12px;color:var(--muted)}
+    .footer-inner a{color:var(--text)}
+    .footer-grid{display:flex;flex-direction:column;gap:4px}
+
+    /* Larger screens */
+    @media (min-width:640px){
+      .title{font-size:2rem}
+      .profile{gap:20px}
+      .avatar{width:128px;height:128px;border-radius:20px}
+      .section{padding:20px}
+      .section h3{font-size:1.15rem}
+    }
+  </style>
 </head>
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
 <body>
-  <h1>
-    Patipol Gunhomepoo Portfolio
-    <a
-      href="https://www.facebook.com/ibanez.micro/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style="margin-left: 10px; display: inline-block;"
-    >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
-        alt="Facebook"
-        width="24"
-        height="24"
-        style="vertical-align: middle;"
-      />
-    </a>
-  </h1>
-  <img src="./assets/images/ProfileImage.png" width="200" />
-  <h2>I'm a Civil Engineer (Class 6)</h2>
-  <h3>Provincial Waterworks Authority (Thailand) Region 8 — Distribution System Division</h3>
-  <hr />
-</body>
+  <div class="container">
+    <header>
+      <h1 class="title">
+        Patipol Gunhomepoo Portfolio
+      </h1>
+      <nav class="social" aria-label="Social links">
+        <!-- Facebook – modern 2021 logo -->
+        <a href="https://www.facebook.com/ibanez.micro/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+            alt="Facebook"
+            width="22"
+            height="22"
+          />
+        </a>
+      </nav>
+    </header>
 
+    <section class="profile">
+      <img src="./assets/images/ProfileImage.png" alt="Profile image of Patipol Gunhomepoo" class="avatar" />
+      <div>
+        <h2 style="margin:0;">I'm a Civil Engineer (Class 6)</h2>
+        <h3 class="subtitle">
+          Provincial Waterworks Authority (Thailand) Region 8 — Distribution System Division
+        </h3>
+        <span class="badge">Mobile Friendly</span>
+      </div>
+    </section>
 
-<!-- Summary -->
-<h3>1) Summary</h3>
-<p>As a dedicated Civil Engineer with 6 years of experience at the Provincial Waterworks Authority (PWA) Region 8, I have specialized in water distribution systems, focusing on the design, operation, and maintenance of water networks. I am committed to ensuring efficient water supply services and implementing solutions for non-revenue water (NRW) reduction. With strong project management skills and a background in Pipe Network Analysis, and Leak Detection, I aim to contribute to the sustainable development of water infrastructure.</p>
+    <hr />
 
-<hr/>
+    <!-- Summary -->
+    <section class="section">
+      <h3>1) Summary</h3>
+      <p class="muted">
+        As a dedicated Civil Engineer with 6 years of experience at the Provincial Waterworks Authority (PWA) Region 8,
+        I have specialized in water distribution systems, focusing on the design, operation, and maintenance of water networks.
+        I am committed to ensuring efficient water supply services and implementing solutions for non-revenue water (NRW) reduction.
+        With strong project management skills and a background in Pipe Network Analysis and Leak Detection, I aim to contribute to the
+        sustainable development of water infrastructure.
+      </p>
+    </section>
 
-<!-- Education-->
-<h3>2) Education</h3>
-<p>
-<ul>
-  <li><b>Bachelor of Engineering in Civil Engineering</b> – Kasetsart University (2014)</li>
-  <li><b>Bachelor of Science in Applied Computer Science</b> – Sukhothai Thammathirat Open University (2025)</li>
-  <li><b>Bachelor of Laws (LL.B.)</b> – Ramkhamhaeng University (2025 – Present)</li>
-  <li><b>Master of Engineering in Engineering and Technology Management (M.Eng. ETM)</b> – Kasetsart University (2025 – Present)</li>
-</ul>
-</p>
-<hr />
+    <!-- Education -->
+    <section class="section">
+      <h3>2) Education</h3>
+      <ul class="list">
+        <li><b>Bachelor of Engineering in Civil Engineering</b> – Kasetsart University (2014)</li>
+        <li><b>Bachelor of Science in Applied Computer Science</b> – Sukhothai Thammathirat Open University (2025)</li>
+        <li><b>Bachelor of Laws (LL.B.)</b> – Ramkhamhaeng University (2025 – Present)</li>
+        <li><b>Master of Engineering in Engineering and Technology Management (M.Eng. ETM)</b> – Kasetsart University (2025 – Present)</li>
+      </ul>
+    </section>
 
-<!-- Work Experience -->
- <h3>3) Work Experience</h3>
- <p><b>Civil Engineer</b><br>
-    <ul>
-        <li> Provincial Waterworks Authority Region 8 – Distribution System Division (October 21, 2562 – Present)</li>
-        <li> Nantawan Co.,Ltd (Thai Obayashi) – Langsuan Village Project (October , 2560 – September, 2562)</li>
-        <li> Ch.Sahasekaitech Co.,Ltd – Design and Estimate Division (April , 2557 – September, 2560)</li>
-    </ul>
+    <!-- Work Experience -->
+    <section class="section">
+      <h3>3) Work Experience</h3>
+      <ul class="list">
+        <li>Provincial Waterworks Authority Region 8 – Distribution System Division (October 21, 2562 – Present)</li>
+        <li>Nantawan Co., Ltd (Thai Obayashi) – Langsuan Village Project (October, 2560 – September, 2562)</li>
+        <li>Ch. Sahasekaitech Co., Ltd – Design and Estimate Division (April, 2557 – September, 2560)</li>
+      </ul>
 
-<h4>Responsibilities:</h4>
-<p>
-    <ul>
+      <h4 style="margin:12px 0 6px;">Responsibilities</h4>
+      <ul class="list muted">
         <li>Managed and maintained the water distribution network across multiple service areas within Region 8, ensuring consistent water supply to both urban and rural areas.</li>
         <li>Conducted comprehensive surveys and assessments of existing pipe networks, identifying weak points and areas requiring maintenance or upgrades.</li>
-        <li>Lead projects to reduce Non-Revenue water (NRW) by implementing advanced leak detection technologies and monitoring systems.</li>
-        <li>Collaborated with cross-functional teams to develop and implement plans for water system expansions, ensuring future demand can be met sustainably.</li>
-        <li>Developed detailed designs for pipeline installations and repairs, focusing on minimizing service disruption while maintaining high-quality standards.</li>
+        <li>Led projects to reduce Non-Revenue Water (NRW) by implementing advanced leak detection technologies and monitoring systems.</li>
+        <li>Collaborated with cross-functional teams to plan water system expansions to meet future demand sustainably.</li>
+        <li>Developed detailed designs for pipeline installations and repairs with minimal service disruption and high quality.</li>
         <li>Prepared technical reports, cost estimates, and project timelines for water infrastructure improvement projects.</li>
-        <li>Coordinated with contractors, suppliers, and government agencies to ensure projects adhered to safety regulations, timelines, and budget constraints.</li>
-        <li>Provided on-site supervision during pipeline installation and repair operations, ensuring compliance with engineering specifications and quality standards.</li>
-    </ul>
-</p>
+        <li>Coordinated with contractors, suppliers, and government agencies to ensure safety, timeline, and budget compliance.</li>
+        <li>Provided on-site supervision during pipeline installation and repair operations per engineering specifications.</li>
+      </ul>
+    </section>
 
-<!-- Skill -->
- <h3>4) Skill</h3>
-<p>
-    <ul>
-        <li><b>Water Distribution Network Design & Management:</b> Proficient in designing, managing, and maintaining water distribution systems, with a focus on efficiency and sustainability.</li>
-        <li><b>Non-Revenue Water (NRW) Reduction:</b> Expertise in leak detection, water auditing, and the implementation of NRW reduction strategies.</li>
-        <li><b>Pipe Network Analysis:</b> Skilled in assessing pipeline conditions, analyzing flow, pressure, and identifying failure points.</li>
-        <li><b>Project Management:</b> Strong ability to oversee multiple projects simultaneously, ensuring timely delivery and adherence to safety standards.</li>
-        <li><b>GIS & Mapping:</b> Experienced in using GIS tools for mapping distribution networks and tracking water system performance.</li>
-        <li><b>Surveying & Site Inspection:</b> Proficient in conducting site surveys, collecting data, and ensuring accuracy in engineering designs.</li>
-        <li><b>Technical Report Writing:</b> Capable of preparing detailed engineering reports, proposals, and documentation for project stakeholders.</li>
-        <li><b>Collaboration & Leadership:</b> Strong team player with the ability to lead teams, coordinate with different departments, and manage contractors effectively.</li>
-        <li><b>Regulatory Compliance:</b> In-depth understanding of civil engineering standards, safety protocols, and local government regulations for water systems.</li>
-    </ul>
-</p>
-<hr />
+    <!-- Skills -->
+    <section class="section">
+      <h3>4) Skills</h3>
+      <ul class="list muted">
+        <li><b>Water Distribution Network Design & Management:</b> Design, manage, and maintain water distribution systems efficiently and sustainably.</li>
+        <li><b>Non-Revenue Water (NRW) Reduction:</b> Leak detection, water auditing, and NRW reduction strategies.</li>
+        <li><b>Pipe Network Analysis:</b> Flow/pressure analysis and failure point identification.</li>
+        <li><b>Project Management:</b> Multi-project oversight with on-time, safe delivery.</li>
+        <li><b>GIS & Mapping:</b> Mapping distribution networks and performance tracking.</li>
+        <li><b>Surveying & Site Inspection:</b> Accurate data collection and design verification.</li>
+        <li><b>Technical Report Writing:</b> Reports, proposals, and stakeholder documentation.</li>
+        <li><b>Collaboration & Leadership:</b> Cross-team coordination and contractor management.</li>
+        <li><b>Regulatory Compliance:</b> Civil engineering standards, safety, and local regulations.</li>
+      </ul>
+    </section>
 
-<!-- Awards, Certifications, and Achievements -->
-<h3>4) Awards, Certifications, and Achievements</h3>
-<p>
-<ul>
-  <li><b>Certified Civil Engineer (Associate Engineer License)</b></li>
-  <li>
-    <b>PWA-NRW OPS — Proactive Leak Detection and Management System</b><br />
-    A comprehensive system for proactive pipeline leak management, covering field surveys, repair tracking, and overall performance monitoring to support efficient water loss reduction and data-driven decision-making.<br />
-    <ul className="list-disc ml-5 mt-1">
-      <li>
-        🥈 <b>PWA8 Kaizen Award (2024)</b> – Provincial Waterworks Authority Region 8<br />
-        Recognized for innovative approaches in enhancing operational efficiency and proactive water loss management.
-      </li>
-      <li>
-        🥈 <b>PWA(ประปาวิวัตฒน์) “Best QCC” 2024</b> – Silver Medal<br />
-        Awarded for process improvement in proactive leak survey and reporting workflows, integrating mobile technology and GIS-based analytics.
-      </li>
-    </ul>
-  </li>
-</ul>
+    <!-- Awards -->
+    <section class="section">
+      <h3>5) Awards, Certifications, and Achievements</h3>
+      <ul class="list">
+        <li><b>Certified Civil Engineer (Associate Engineer License)</b></li>
+        <li>
+          <b>PWA-NRW OPS — Proactive Leak Detection and Management System</b><br />
+          <span class="muted">
+            A comprehensive system for proactive pipeline leak management, covering field surveys, repair tracking, and overall performance monitoring to support efficient water loss reduction and data-driven decision-making.
+          </span>
+          <ul class="awards-sub">
+            <li>
+              🥈 <b>PWA8 Kaizen Award (2024)</b> – Provincial Waterworks Authority Region 8<br />
+              <span class="muted">Recognized for innovative approaches in enhancing operational efficiency and proactive water loss management.</span>
+            </li>
+            <li>
+              🥈 <b>PWA (ประปาวิวัฒน์) “Best QCC” 2024</b> – Silver Medal<br />
+              <span class="muted">Awarded for process improvement in proactive leak survey and reporting workflows, integrating mobile technology and GIS-based analytics.</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-</p>
-<hr />
+    <!-- Other -->
+    <section class="section">
+      <h3>6) Other</h3>
+      <ul class="list">
+        <li><a href="https://www.instagram.com/patipollz/" target="_blank" rel="noopener noreferrer">My Hobbies</a></li>
+      </ul>
+    </section>
+  </div>
 
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
-<h3>5) Other</h3>
-<ul>
-    <li><a href="https://www.instagram.com/patipollz/">My Hobbies</a></li>
-</ul>
-
-<footer>
-    <p>© 2024 PATIPOLLZ</p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <span>© 2024 PATIPOLLZ</span>
+        <span>
+          Engineering By
+          <a href="https://inherthz.github.io/html-portforio/" target="_blank" rel="noopener noreferrer">
+            ปฏิพล กันโฮมภู วิศวกร 6
+          </a>
+        </span>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
